@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Jesses app yo</title>
+</head>
+<body ng-app="liftApp">
+	<!-- SPA with angular -->
+	<header>Header</header>
+
+	<!-- Login -->
+	<section>
+		<h2>Login</h2>
+		<form>
+			<input name="email" placeholder="email" />
+			<button>Submit</button>
+		</form>
+	</section>
+
+	<!-- select exercise day -->
+	<section class="container">
+		<ul>
+			<li>
+				<a href="#">Arms</a>
+			</li>
+			<li>
+				<a href="#">Deadlifts</a>
+			</li>
+			<li>
+				<a href="#">Chest</a>
+			</li>
+			<li>
+				<a href="#">Back</a>
+			</li>
+			<li>
+				<a href="#">Legs</a>
+			</li>
+			<li>
+				<a href="#">Shoulders</a>
+			</li>
+		</ul>
+	</section>
+
+
+	<!-- list of exercises on that day -->
+	<section>
+		<!-- app.js plugin -->
+		<ul>
+		  <li ng-repeat=""><a href="#">{{ exercise name }}</a></li>
+		</ul>
+	</section>
+
+
+
+	<!-- main app area -->
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-6"></div>
+				<form>
+					<div class="col-md-2">
+          	<h3>Exercise title</h3>
+            <input type="checkbox">Machine</input>
+					</div>
+                    <div class="col-md-2">
+                        <h3>Set 1</h3>
+						<input placeholder="Set 1" />
+					</div>
+					<div class="col-md-2">
+                        <h3>Set 2</h3>
+						<input placeholder="Set 2" />
+					</div>
+					<div class="col-md-2">
+                        <h3>Set 3</h3>
+						<input placeholder="Set 3" />
+					</div>
+                    <div class="col-md-2">
+                        <h3>Set 4</h3>
+						<input placeholder="Max" />
+					</div>
+                    <div class="col-md-2">
+                        <h3>Set 5</h3>
+						<input placeholder="Max" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+
+
+	<footer>Footer</footer>
+
+	<!-- scripts -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+</body>
+</html>
