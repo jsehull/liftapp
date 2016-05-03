@@ -19,6 +19,9 @@ power lifting web app
 	unlimited memory
 	3 column (2 week ago | last week | this week)
 		(weight | reps)
+	future
+		list order of exercises?
+			sort and drag order?
 
 
 

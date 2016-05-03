@@ -1,3 +1,36 @@
 body {
-	
+	text-align: center;
+	margin: 0 auto;
+}
+header {
+	background-color: #3c6ef6;
+}
+header p {
+	margin: 0 auto;
+}
+footer {
+	background-color: #bbb;
+}
+.login {
+	background-color: #bbb;
+}
+.day {
+	background-color: #ccc;
+}
+.day ul {
+	list-style: none;
+	padding-left: 0;
+}
+.exercises {
+	background-color: #ddd;
+}
+.exercises ul {
+	list-style: none;
+	padding-left: 0;
+}
+.main-app {
+	background-color: #aaa;
+}
+.main-app input {
+	width: 80px; // max width for 2 columns on row width 1
 }
