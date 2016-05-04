@@ -27,7 +27,17 @@ power lifting web app
 
 
 Header - the time
+Exercise count #
 
+
+all a set
+unique key
+	date
+	day
+	exerciseType
+	order #
+	weight
+	reps
 
 
 

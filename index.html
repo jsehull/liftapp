@@ -9,7 +9,7 @@
 </head>
 
 <!-- SPA with angular -->
-<body ng-app="liftApp">
+<body ng-app="liftApp" ng-controller="DropdownController as drop">
 	<header>
 		<p>Header</p>
 	</header>
@@ -25,29 +25,53 @@
 		<div>
 	</section> -->
 
-	<!-- select exercise day -->
-		<section class="day" ng-controller="RoutineController as routine">
+
+	<!-- MENU navigation -->
+  <section class="menu">
+  	<!-- ngSelect Day -->
+  	<div class="container">
+			<select ng-model="drop.selectedDay">
+      	<option ng-repeat="(dayKey, dayValue) in drop.routine" value="{{dayKey}}">{{dayValue.name}}</option>
+   		</select>
+  	</div>
+		<!-- ngSelect Exercise -->
+  	<div class="container">
+			<select ng-model="drop.selectedExercise" ng-show="drop.selectedDay">
+      	<option ng-repeat="exercise in drop.routine[drop.selectedDay].exerciseType" value="{{exercise}}">{{exercise}}</option>
+   		</select>
+  	</div>
+  </section>
+
+
+
+
+	<!-- Day dropdown
+		<!- <section class="day" ng-controller="DropdownController as drop">
 			<div class="container">
 				<div class="btn-group" uib-dropdown>
-		      <button type="button" class="btn btn-primary" uib-dropdown-toggle>Select Day<span class="caret"></span>
+		      <button type="button" class="btn btn-primary" uib-dropdown-toggle>Choose Day<span class="caret"></span>
 		      </button>
 		      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-		      	<li role="menuitem" ng-repeat="exercise in routine.exercises">
-		      		<a href="#">{{routine.exercise}}</a>
+		      	<li role="menuitem" ng-repeat="day in drop.days">
+		      		<a href="#">{{day}}</a>
 		      	</li>
 		      </ul>
 		    </div>
 		  </div>
-		</section>
+		</section> -->
 
 
-	<!-- list of exercises on that day -->
-	<section class="exercises">
+
+<!-- Exercise dropdown 
+	<section class="exercises" ng-controller="DropdownController as drop">
 		<div class="container">
 			<div class="btn-group" uib-dropdown>
-	      <button type="button" class="btn btn-primary" uib-dropdown-toggle>Select Exercise<span class="caret"></span>
+	      <button type="button" class="btn btn-primary" uib-dropdown-toggle>Choose Exercise<span class="caret"></span>
 	      </button>
 	      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+	        <li role="menuitem" ng-repeat="exercise in drop.exercisesForDay">
+	        	<a href="#">{{drop.day.exercise}}</a>
+	        </li>
 	        <li role="menuitem"><a href="#">Sit Down Curl</a></li>
 	        <li role="menuitem"><a href="#">Single Overhead</a></li>
 	        <li role="menuitem"><a href="#">Standing Curl Dumbell</a></li>
@@ -60,174 +84,101 @@
 	    </div>
 	  </div>
 	</section>
-
-	<section class="exercises">
-		<div class="container">
-			<ul>
-			  <li><a href="#">another dropdown area</a></li>
-			</ul>
-	    <ul>
-			  <li><a href="#"> list on Drive </a></li>
-			</ul>
-	    <ul>
-			  <li><a href="#"> enter data for controller  </a></li>
-			</ul>
-		</div>
-	</section>
+ -->
 
 
 
 
-<!-- STATIC DATA FIELD -->
-	<section>
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-2">
-	        <p>40 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>90 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>140 | 8</p>
-	        <!-- <p>8</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-2">
-	        <p>40 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>90 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>140 | 10</p>
-	        <!-- <p>8</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-2">
-	        <p>50 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>100 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>150 | 8</p>
-	        <!-- <p>8</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-2">
-	        <p>50 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>100 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>150 | 10</p>
-	        <!-- <p>8</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-2">
-	        <p>60 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>110 | 10</p>
-	        <!-- <p>10</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>160 | 6</p>
-	        <!-- <p>8</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	      <div class="col-md-2">
-	        <p>- | -</p>
-	        <!-- <p>-</p> -->
-	      </div>
-	    </div>
-	  </div>
-	</section>
 
 
 
 	<!-- main app area -->
 	<main class="main-app">
 		<div class="container">
-			<h3>Exercise title</h3>
+			<h3>{{drop.selectedExercise}}</h3>
+				
+
+		<!-- STATIC DATA FIELD -->
+			<section>
+			  <div class="container">
+			    <div class="row">
+			      <div class="col-xs-2">
+			        <span>40</span>
+			        <span>10</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>90</span>
+			        <span>10</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>140</span>
+			        <span>8</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>-</span>
+			        <span>-</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>-</span>
+			        <span>-</span>
+			      </div>
+			    </div>
+			    <div class="row">
+			      <div class="col-xs-2">
+			        <span>40</span>
+			        <span>10</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>90</span>
+			        <span>10</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>140</span>
+			        <span>8</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>-</span>
+			        <span>-</span>
+			      </div>
+			      <div class="col-xs-2">
+			        <span>-</span>
+			        <span>-</span>
+			      </div>
+			    </div>
+			  </div>
+			</section>
+
+
+
+
 			<div class="row">
 				<form>
-					<!-- <div class="col-md-2"> 
+					<!-- <div class="col-xs-2"> 
 	          <div>
 		          <input type="checkbox">alt. i.e. machine</input>
 	          </div>
 					</div> -->
-          <div class="col-md-2">
+          <div class="col-xs-2">
             <h3>Set 1</h3>
-						<input placeholder="weight"/>
-            <input placeholder="reps"/>
+						<input placeholder="weight"/><span>+</span><span>-</span>
+            <input placeholder="reps"/><span>+</span><span>-</span>
 					</div>
-					<div class="col-md-2">
+					<div class="col-xs-2">
             <h3>Set 2</h3>
-						<input placeholder="weight"/>
-            <input placeholder="reps"/>
+						<input placeholder="weight"/><span>+</span><span>-</span>
+            <input placeholder="reps"/><span>+</span><span>-</span>
 					</div>
-					<div class="col-md-2">
+					<div class="col-xs-2">
             <h3>Set 3</h3>
 						<input placeholder="weight"/>
             <input placeholder="reps"/>
 					</div>
-          <div class="col-md-2">
+          <div class="col-xs-2">
             <h3>Set 4</h3>
 						<input placeholder="max"/>
             <input placeholder="reps"/>
 					</div>
-          <div class="col-md-2">
+          <div class="col-xs-2">
             <h3>Set 5</h3>
 						<input placeholder="max"/>
             <input placeholder="reps"/>
