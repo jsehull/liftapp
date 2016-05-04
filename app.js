@@ -1,39 +1,43 @@
 (function() {
-	var app = angular.module('liftApp', []);
+	angular
+		.module('liftApp', ['ngAnimate', 'ui.bootstrap'])
+		.controller('RoutineController', function() {
+			var days = Object.keys(exercises);
+			var exercisesForDay = exercises[day];
+			// ng-click, 
+		});
 
-	app.controller('DayRoutine', funciton() {
 
-	});
+	// var exerciseList = [
+	// 	{
+	// 		day: 'Deadlifts',
+	// 		name: 'Calf Press',
+	// 	},
+	// 	{
+	// 		day: 'Deadlifts',
+	// 		name: 'Calf Press'
+	// 	},
+	// 	{
+	// 		day: 'Deadlifts',
+	// 		name: 'Calf Press'
+	// 	},
+	// 	{
+	// 		day: 'Deadlifts',
+	// 		name: 'Calf Press'
+	// 	}
+	// ];
 
-	var exerciseList = [
-		{
-			day: 'Deadlifts',
-			name: 'Calf Press',
-		},
-		{
-			day: 'Deadlifts',
-			name: 'Calf Press'
-		},
-		{
-			day: 'Deadlifts',
-			name: 'Calf Press'
-		},
-		{
-			day: 'Deadlifts',
-			name: 'Calf Press'
-		}
-	];
-
-	var exerciseList = {
+	var exercises = {
 		Deadlifts: [
 			'Calf Press',
-			'Other Excercise'
+			'deadlift'
 		],
 		Arms: [
-			'Calf Press',
-			'Other Excercise'
+			'curl',
+			'standing curl'
 		]
-	}
+	};
+
 
 	// where to store appended set data
 
