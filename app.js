@@ -3,6 +3,11 @@
 		.module('liftApp', ['ngAnimate', 'ui.bootstrap'])
 		.controller('DropdownController', function() {
 			this.routine = menuData;
+		})
+		/// future use for new input area ///
+		.controller('SetController', function() {
+			// this.setInput = setData;
+
 		});
 
 	var menuData = {
@@ -70,6 +75,49 @@
 			]
 		}
 	}
+
+	// var setData = {
+	// 	unique1: {
+	// 		date: x,
+	// 		day: 'Arms',
+	// 		exerciseType: 'standing-curl-dumbell',
+	// 		orderNum: 1,
+	// 		weight: 10,
+	// 		reps: 10,
+	// 	},
+	// 	unique2: {
+	// 		date: x,
+	// 		day: 'Arms',
+	// 		exerciseType: 'standing-curl-dumbell',
+	// 		orderNum: 2,
+	// 		weight: 20,
+	// 		reps: 10,
+	// 	},
+	// 	unique3: {
+	// 		date: x,
+	// 		day: 'Arms',
+	// 		exerciseType: 'standing-curl-dumbell',
+	// 		orderNum: 3,
+	// 		weight: 30,
+	// 		reps: 10,
+	// 	},
+	// 	unique4: {
+	// 		date: x,
+	// 		day: 'Arms',
+	// 		exerciseType: 'standing-curl-dumbell',
+	// 		orderNum: 4,
+	// 		weight: 0,
+	// 		reps: 0,
+	// 	},
+	// 	unique5: {
+	// 		date: x,
+	// 		day: 'Arms',
+	// 		exerciseType: 'standing-curl-dumbell',
+	// 		orderNum: 5,
+	// 		weight: 0,
+	// 		reps: 0,
+	// 	}
+	// }
 
 
 

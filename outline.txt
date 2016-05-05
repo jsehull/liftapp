@@ -43,7 +43,8 @@ unique key
 
 
 
-
+new date()
+day.getDay();
 
 
 
