@@ -4,9 +4,32 @@
 		.controller('DropdownController', function() {
 			this.routine = menuData;
 		})
-		/// future use for new input area ///
-		.controller('SetController', function() {
-			// this.setInput = setData;
+		.controller('HistoryController', function() {
+			// gets static history
+			this.histRows = setHistory;
+
+			// logs day of week
+			this.workoutDate = dayOfWeek();
+			function dayOfWeek(){
+				var date = new Date();
+				var today = date.getDay();
+				var arrayDays = [
+					'Sunday',
+					'Monday',
+					'Tuesday',
+					'Wednesday',
+					'Thursday',
+					'Friday',
+					'Saturday'
+				];
+				return arrayDays[today];
+			};
+
+			// pushes new sets onto history
+			this.setWeight = [];
+			this.submit = function(){
+				setHistory.push(this.setWeight);
+			};
 
 		});
 
@@ -15,6 +38,7 @@
 			name: 'Arms',
 			exerciseType: [
 				'Sit Down Curls',
+				// objects sit-down-curls
 				'Single Overheads',
 	      'Standing Curl Dumbells',
 	      'Kickbacks',
@@ -74,9 +98,23 @@
 	      'Chin Raises'
 			]
 		}
-	}
+	};
 
-	// var setData = {
+	var setHistory = [
+		['40/10', '90/10', '140/8'],
+		['40/10', '90/10', '140/10'],
+		['50/10', '100/10', '150/6'],
+		['50/10', '100/10', '150/8'],
+		['50/10', '100/10', '150/10'],
+		['60/10', '110/10', '160/6']
+	];
+
+
+
+	
+
+
+//var setDataDUPLICATE = {
 	// 	unique1: {
 	// 		date: x,
 	// 		day: 'Arms',

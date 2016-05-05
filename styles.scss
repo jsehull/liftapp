@@ -8,30 +8,31 @@ header {
 	  margin: 0 auto;
   }
 }
+form {
+  background-color: gray;
+  input {
+    // margin: 5px 0;
+  }
+}
+button {
+  margin: 15px 0;
+}
 footer {
 	background-color: #bbb;
 }
 // .login {
 //  	background-color: #bbb;
 // }
-.day {
-	background-color: #ccc;
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
+.menu {
+  background-color: #ddd;
 }
-.exercises {
-	background-color: #ddd;
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-}
+// .column-titles {
+//   font-weight: bold;
+// }
 .main-app {
 	background-color: #aaa;
   input {
-    width: 50px;  // desktop: 80 max width for 2 columns on row width 1
+    width: 45px;  // desktop: 80 max width for 2 columns on row width 1
   }
 }
 .input-area {

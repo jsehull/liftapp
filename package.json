@@ -4,7 +4,7 @@
   "description": "weight and rep history per exercise",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass styles.scss styles.css"
+    "sass": "node-sass -w styles.scss styles.css"
   },
   "repository": {
     "type": "git",

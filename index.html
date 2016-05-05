@@ -17,131 +17,76 @@
 
 	<!-- MENU navigation -->
   <section class="menu" ng-controller="DropdownController as drop">
-
   	<!-- ngSelect Day -->
-  	<div class="container">
 			<select ng-model="drop.selectedDay">
       	<option ng-repeat="(dayKey, dayValue) in drop.routine" value="{{dayKey}}">{{dayValue.name}}</option>
    		</select>
-  	</div>
-
 		<!-- ngSelect Exercise -->
-  	<div class="container">
 			<select ng-model="drop.selectedExercise" ng-show="drop.selectedDay">
       	<option ng-repeat="exercise in drop.routine[drop.selectedDay].exerciseType" value="{{exercise}}">{{exercise}}</option>
    		</select>
-  	</div>
   	<h3>{{drop.selectedExercise}}</h3>
   </section>
 
 
 
-	<!-- main app area -->
-	<main class="main-app" ng-controller="SetController as set">
+	<!-- MAIN APP area -->
+	<main class="main-app" ng-controller="HistoryController as hist">
 		<div class="container">
 			<section class="history">
-			  <div class="container">
+			<!-- history column TITLES -->
+				<div class="row column-titles">
+		    	<div class="col-xs-2">Date</div>
+		      <div class="col-xs-2">Set 1</div>
+		      <div class="col-xs-2">Set 2</div>
+		      <div class="col-xs-2">Set 3</div>
+		      <div class="col-xs-2">Set 4</div>
+		      <div class="col-xs-2">Set 5</div>
+				</div>
+
+			<!-- repeating history DATA -->
+		    <div class="row" ng-repeat="row in hist.histRows track by $index">
+		      <div class="col-xs-2">
+		        <span>{{hist.workoutDate}}</span>
+		      </div>
+		      <div class="col-xs-2" ng-repeat="set in row">
+		        <span>{{set}}</span>
+		      </div>
+		    </div>
+
+
+		    <!-- FORM AREA -->
+		    <form ng-submit="hist.submit()">
 			    <div class="row">
+			    	<div class="col-xs-2"></div>
 			      <div class="col-xs-2">
-			        <span>Date</span>
+			        <input placeholder="weight" ng-model="hist.setWeight[0]" type="tel" value="{{weight}}"/>
+			        </br>
+			        <input placeholder="reps" ng-model="hist.setReps[0]" type="tel" value="{{reps}}"/>
 			      </div>
 			      <div class="col-xs-2">
-			        <span>40/10</span>
+			        <input placeholder="weight" ng-model="hist.setWeight[1]" type="tel" value="{{weight}}"/>
+			        </br><input placeholder="reps" ng-model="hist.setReps[1]" type="tel" value="{{reps}}"/>
 			      </div>
 			      <div class="col-xs-2">
-			        <span>90/10</span>
+			        <input placeholder="weight" ng-model="hist.setWeight[2]" type="tel" value="{{weight}}"/>
+			        </br>
+			        <input placeholder="reps" ng-model="hist.setReps[2]" type="tel" value="{{reps}}"/>
 			      </div>
 			      <div class="col-xs-2">
-			        <span>140/8</span>
+			        <input placeholder="weight" ng-model="hist.setWeight[3]" type="tel" value="{{weight}}"/>
+			        </br>
+			        <input placeholder="reps" ng-model="hist.setReps[3]" type="tel" value="{{reps}}"/>
 			      </div>
 			      <div class="col-xs-2">
-			        <span>-/-</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>-/-</span>
+			        <input placeholder="weight" ng-model="hist.setWeight[4]" type="tel" value="{{weight}}"/>
+			        </br>
+			        <input placeholder="reps" ng-model="hist.setReps[4]" type="tel" value="{{reps}}"/>
 			      </div>
 			    </div>
-			    <div class="row">
-			      <div class="col-xs-2">
-			        <span>Date</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>40/10</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>90/10</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>140/8</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>-/-</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>-/-</span>
-			      </div>
-			    </div>
-			    <div class="row">
-			      <div class="col-xs-2">
-			        <span>Date</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>40/10</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>90/10</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>140/8</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>-/-</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>-/-</span>
-			      </div>
-			    </div>
-			    <div class="row">
-			      <div class="col-xs-2">
-			        <span>Date</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>40/10</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>90/10</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>140/8</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>-/-</span>
-			      </div>
-			      <div class="col-xs-2">
-			        <span>-/-</span>
-			      </div>
-			    </div>
-			    <form>
-				    <div class="row">
-				    	<div class="col-xs-2"></div>
-				      <div class="col-xs-2">
-				        <input placeholder="weight" value=""/></br></br><input placeholder="reps" value="reps"/>
-				      </div>
-				      <div class="col-xs-2">
-				        <input placeholder="weight" value=""/></br></br><input placeholder="reps" value="reps"/>
-				      </div>
-				      <div class="col-xs-2">
-				        <input placeholder="weight" value=""/></br></br><input placeholder="reps" value="reps"/>
-				      </div>
-				      <div class="col-xs-2">
-				        <input placeholder="weight" value=""/></br></br><input placeholder="reps" value="reps"/>
-				      </div>
-				      <div class="col-xs-2">
-				        <input placeholder="weight" value=""/></br></br><input placeholder="reps" value="reps"/>
-				      </div>
-				    </div>
-				  </form>
-			  </div>
+			    <button>Submit</button>
+			  </form>
+
 			</section>
 
 
