@@ -1,5 +1,11 @@
-power lifting web app
+lifting web app
 	
+
+tel vs number
+hide undo
+
+
+
 
 // roadmap (SPA with angular)
 1.Login
@@ -38,6 +44,8 @@ unique key
 	order #
 	weight
 	reps
+
+
 
 
 

@@ -20,6 +20,9 @@ button {
 footer {
 	background-color: #bbb;
 }
+.ng-cloak {
+  display: none !important;
+}
 // .login {
 //  	background-color: #bbb;
 // }
@@ -29,12 +32,6 @@ footer {
 // .column-titles {
 //   font-weight: bold;
 // }
-.main-app {
-	background-color: #aaa;
-  input {
-    width: 45px;  // desktop: 80 max width for 2 columns on row width 1
-  }
-}
 .input-area {
 	background-color: #ddd;
 }
