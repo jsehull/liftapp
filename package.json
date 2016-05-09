@@ -4,7 +4,9 @@
   "description": "weight and rep history per exercise",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass -w styles.scss styles.css"
+    "sass": "node-sass -w styles.scss styles.css",
+    "serve": "http-server -o",
+    "dev": "parallelshell 'npm run sass' 'npm run serve'"
   },
   "repository": {
     "type": "git",
@@ -13,6 +15,8 @@
   "author": "Jesse Hull <jse.hull@gmail.com>",
   "private": true,
   "devDependencies": {
-    "node-sass": "^3.7.0"
+    "http-server": "^0.9.0",
+    "node-sass": "^3.7.0",
+    "parallelshell": "^2.0.0"
   }
 }

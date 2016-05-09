@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="styles.css">
   <title>liftApp</title>
 </head>
@@ -11,7 +11,7 @@
 <!-- SPA with angular -->
 <body ng-app="liftApp" class="ng-cloak">
 	<header>
-		<p>Header</p>
+		<p>liftApp - Code Review</p>
 	</header>
 
 	<!-- MENU navigation -->
@@ -25,52 +25,59 @@
 			<select ng-model="drop.selectedExercise" ng-show="drop.selectedDay">
       	<option ng-repeat="exercise in drop.routine[drop.selectedDay].exerciseType" value="{{exercise}}">{{exercise}}</option>
    		</select>
-  	<h3>{{drop.selectedExercise}}</h3>
+  	<h2 class="exercise-title">{{drop.selectedExercise}}</h2>
   </section>
 
 
 
 	<!-- MAIN APP area -->
 	<main class="main-app" ng-controller="HistoryController as hist">
-		<div class="container">
+		<div class="container content-area">
 
 			<!-- repeating history DATA -->
 	    <div class="row" ng-repeat="set in hist.sets track by $index">
-	      <div class="col-xs-6">
-					<h3>Set {{$index + 1}}</h3>
+	      <div class="col-xs-6 col-sm-offset-4 col-sm-2">
+					<h3 class="set-title">Set {{$index + 1}}</h3>
 	      </div>
-	      <div class="col-xs-3">
-	      	<p>{{set.weight}}</p>
+	      <div class="col-xs-2 col-sm-1">
+	      	<h4 class="set-numbers">{{set.weight}}</h4>
 	      </div>
-	      <div class="col-xs-3">
-	      	<p>{{set.reps}}</p>
+	      <div class="col-xs-2 col-sm-1">
+	      	<h4 class="set-numbers">{{set.reps}}</h4>
 	      </div>
 	    </div>
 
-			<!-- input + submit area -->
-
-			<form class="form-inline" ng-submit="hist.submit()">
+			<!-- input + submit button -->
+			<form class="form-horizontal" ng-submit="hist.submit()">
 				<div class="form-group">
-					<input ng-model="hist.set.weight" placeholder="weight" type="number" />
-			    <input ng-model="hist.set.reps" placeholder="reps" type="number" />
-			    <button>Submit</button>
+
+					<label class="col-xs-6">Enter Weight</label>
+					<div class="col-xs-6 text-left">
+						<input ng-model="hist.set.weight" type="tel" />
+					</div>
+
+			    <label class="col-xs-6">Enter Reps</label>
+			    <div class="col-xs-6 text-left">
+			    	<input ng-model="hist.set.reps" type="tel" />
+			    </div>	
+
+			   <div class="col-xs-12 text-center">
+			    <button class="btn btn-success">Submit</button>
 			  </div>
+			
+				<!-- undo button -->
+				<button type="button" ng-click="hist.undo()" ng-show="hist.sets.length" class="btn btn-link">Undo</button>
 			</form>
-			<button ng-click="hist.undo()" ng-show="hist.sets.length">Undo</button>
 
 		</div>
 	</main>
 
-
-	<footer>
-		<p>Footer</p>
-	</footer>
-
 	<!-- scripts -->
-	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/g/angularjs@1.5.0(angular.min.js+angular-animate.min.js)"></script>
-  <script src="https://cdn.jsdelivr.net/angular.bootstrap/1.2.2/ui-bootstrap.min.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="/app.js"></script>
 </body>
 </html>

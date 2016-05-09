@@ -1,6 +1,7 @@
 body {
 	text-align: center;
 	margin: 0 auto;
+  background-color: #ddd;
 }
 header {
 	background-color: #3c6ef6;
@@ -9,13 +10,15 @@ header {
   }
 }
 form {
-  background-color: gray;
-  input {
-    // margin: 5px 0;
+  label {
+    text-align: right;
   }
-}
-button {
-  margin: 15px 0;
+  input {
+    width: 100px;
+  }
+  button {
+    margin: 15px 0;
+  }
 }
 footer {
 	background-color: #bbb;
@@ -23,15 +26,39 @@ footer {
 .ng-cloak {
   display: none !important;
 }
-// .login {
-//  	background-color: #bbb;
-// }
 .menu {
   background-color: #ddd;
+  padding-top: 10px;
 }
-// .column-titles {
-//   font-weight: bold;
-// }
-.input-area {
-	background-color: #ddd;
+
+// content section
+.content-area {
+  background-color: #aaa;
+  padding-top: 15px;
+}
+.exercise-title {
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+// row history
+.set-title {
+  margin: 0 0 10px;
+}
+.set-numbers {
+  margin: 3px 0 10px;
+}
+
+// form area
+.form-group {
+  margin-top: 10px;
+}
+.btn.btn-success {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 25px;
+}
+.btn.btn-link {
+  font-size: 12px;
+  padding: 3px 6px;
 }

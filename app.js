@@ -5,16 +5,16 @@
 		.controller('HistoryController', HistoryController)
 		.constant('menuData', {
 			arms: {
-			name: 'Arms',
-			exerciseType: [
-				'Sit Down Curls',
-				'Single Overheads',
-	      'Standing Curl Dumbells',
-	      'Kickbacks',
-	      'Hammer Curls',
-	      'Skull Crushers',
-	      'Rope Down',
-	      'Standing Bar Curls'
+				name: 'Arms',
+				exerciseType: [
+					'Sit Down Curls',
+					'Single Overheads',
+		      'Standing Curl Dumbells',
+		      'Kickbacks',
+		      'Hammer Curls',
+		      'Skull Crushers',
+		      'Rope Down',
+		      'Standing Bar Curls'
 				]
 			},
 	    deadlifts: {
@@ -69,14 +69,13 @@
 			}
 		});
 
-		
 	function DropdownController(menuData) {
 		this.routine = menuData;
 	}
 
 	function HistoryController() {
 		// creates empty array for input ng-models
-		this.sets = [];
+		this.sets = []
 		this.set = {};
 
 		// ADD + DELETE new sets onto history
