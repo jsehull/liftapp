@@ -4,9 +4,11 @@
   "description": "weight and rep history per exercise",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass -w styles.scss styles.css",
+    "sass": "node-sass styles.scss styles.css",
+    "sass-watch": "node-sass -w styles.scss styles.css",
     "serve": "http-server -o",
-    "dev": "parallelshell 'npm run sass' 'npm run serve'"
+    "dev": "parallelshell --kill-others \"npm run sass-watch\" \"npm run serve\"",
+    "build": "npm run sass && npm run serve"
   },
   "repository": {
     "type": "git",
