@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="styles.css">
@@ -10,71 +10,75 @@
 
 <!-- SPA with angular -->
 <body ng-app="liftApp" class="ng-cloak">
-	<header>
-		<p>liftApp - Code Review</p>
-	</header>
+  <header>
+    <p>liftApp - Code Review</p>
+  </header>
 
-	<!-- MENU navigation -->
+  <!-- MENU navigation -->
   <section class="menu" ng-controller="DropdownController as drop">
+  
   	<!-- ngSelect Day -->
-			<select ng-model="drop.selectedDay">
-      	<option ng-repeat="(dayKey, dayValue) in drop.routine" value="{{dayKey}}">{{dayValue.name}}</option>
-   		</select>
-   		</br>
-		<!-- ngSelect Exercise -->
-			<select ng-model="drop.selectedExercise" ng-show="drop.selectedDay">
-      	<option ng-repeat="exercise in drop.routine[drop.selectedDay].exerciseType" value="{{exercise}}">{{exercise}}</option>
-   		</select>
-  	<h2 class="exercise-title">{{drop.selectedExercise}}</h2>
+    <select ng-model="drop.selectedDay">
+      <option ng-repeat="(dayKey, dayValue) in drop.routine" value="{{dayKey}}">{{dayValue.name}}</option>
+    </select>
+    </br>
+    
+    <!-- ngSelect Exercise -->
+    <select ng-model="drop.selectedExercise" ng-show="drop.selectedDay">
+      <option ng-repeat="exercise in drop.routine[drop.selectedDay].exerciseType" value="{{exercise}}">{{exercise}}</option>
+    </select>
+    
+    <h2 class="exercise-title">{{drop.selectedExercise}}</h2>
   </section>
 
 
 
-	<!-- MAIN APP area -->
-	<main class="main-app" ng-controller="HistoryController as hist">
-		<div class="container content-area">
+  <!-- MAIN APP area -->
+  <main class="main-app" ng-controller="HistoryController as hist">
+    <div class="container content-area">
 
-			<!-- repeating history DATA -->
-	    <div class="row" ng-repeat="set in hist.sets track by $index">
-	      <div class="col-xs-6 col-sm-offset-4 col-sm-2">
-					<h3 class="set-title">Set {{$index + 1}}</h3>
-	      </div>
-	      <div class="col-xs-2 col-sm-1">
-	      	<h4 class="set-numbers">{{set.weight}}</h4>
-	      </div>
-	      <div class="col-xs-2 col-sm-1">
-	      	<h4 class="set-numbers">{{set.reps}}</h4>
-	      </div>
-	    </div>
+      <!-- repeating history DATA -->
+      <div class="row" ng-repeat="set in hist.sets track by $index">
+        <div class="col-xs-6 col-sm-offset-4 col-sm-2">
+          <h3 class="set-title">Set {{$index + 1}}</h3>
+        </div>
+        <div class="col-xs-2 col-sm-1">
+          <h4 class="set-numbers">{{set.weight}}</h4>
+        </div>
+        <div class="col-xs-2 col-sm-1">
+          <h4 class="set-numbers">{{set.reps}}</h4>
+        </div>
+      </div>
 
-			<!-- input + submit button -->
-			<form class="form-horizontal" ng-submit="hist.submit()">
-				<div class="form-group">
+      <!-- input + submit button -->
+      <form class="form-horizontal" ng-submit="hist.submit()">
+        <div class="form-group">
 
-					<label class="col-xs-6">Enter Weight</label>
-					<div class="col-xs-6 text-left">
-						<input ng-model="hist.set.weight" type="tel" />
-					</div>
+          <label class="col-xs-6">Enter Weight</label>
+          <div class="col-xs-6 text-left">
+            <input ng-model="hist.set.weight" type="tel" />
+          </div>
 
-			    <label class="col-xs-6">Enter Reps</label>
-			    <div class="col-xs-6 text-left">
-			    	<input ng-model="hist.set.reps" type="tel" />
-			    </div>	
+          <label class="col-xs-6">Enter Reps</label>
+          <div class="col-xs-6 text-left">
+            <input ng-model="hist.set.reps" type="tel" />
+          </div>	
 
-			   <div class="col-xs-12 text-center">
-			    <button class="btn btn-success">Submit</button>
-			  </div>
-			
-				<!-- undo button -->
-				<button type="button" ng-click="hist.undo()" ng-show="hist.sets.length" class="btn btn-link">Undo</button>
-			</form>
+          <div class="col-xs-12 text-center">
+            <button class="btn btn-success">Submit</button>
+          </div>
 
-		</div>
-	</main>
+          <!-- undo button -->
+          <button type="button" ng-click="hist.undo()" ng-show="hist.sets.length" class="btn btn-link">Undo</button>
+        </div>
+      </form>
 
-	<!-- scripts -->
-	<script src="/bower_components/jquery/dist/jquery.js"></script>
-	<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    </div>
+  </main>
+
+  <!-- scripts -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.js"></script>
   <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
